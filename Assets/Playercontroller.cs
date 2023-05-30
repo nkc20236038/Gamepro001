@@ -26,7 +26,17 @@ public class Playercontroller : MonoBehaviour
         {
             transform.Translate(0.2f, 0, 0);　　//下に（　）動かす
         }
-        
+        //Dキーが押されたとき
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(0, 0.2f, 0);　　//右に（　）動かす
+        }
+        //Aキーが押されたとき
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(0, -0.2f, 0);　　//左に（　）動かす
+        }
+
     }
 }
        
