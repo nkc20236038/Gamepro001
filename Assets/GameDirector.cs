@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class GameDirector : MonoBehaviour
 {
-    GameObject Time;
+     GameObject Time;
+    public Text distanceText;
+    private float distance;
+    private float playTime;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,10 @@ public class GameDirector : MonoBehaviour
     void Update()
     {
         this.Time.GetComponent<Image>().fillAmount -= 0.001f;
+        playTime += Time.deltaTime;
+        distance = playTime * 10;
+
+        distanceText.text = "Distance" + distance.ToString("F2") + "m";
 
     }
 
