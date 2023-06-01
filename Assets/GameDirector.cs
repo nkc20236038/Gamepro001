@@ -6,12 +6,14 @@ using TMPro;
 public class GameDirector : MonoBehaviour
 {
      GameObject Time;
-    public Text distanceText;
-    private float distance;
-    private float playTime;
+    //public Text distanceText;
+    //private float distance;
+    //private float playTime;
 
     // Start is called before the first frame update
+    
     void Start()
+
     {
         this.Time = GameObject.Find("Time");
     }
@@ -20,10 +22,15 @@ public class GameDirector : MonoBehaviour
     void Update()
     {
         this.Time.GetComponent<Image>().fillAmount -= 0.001f;
-        playTime += Time.deltaTime;
-        distance = playTime * 10;
+        
+        if (Time > 0.0000001f) ;
+        
+        
+        //playTime += Time.deltaTime;
 
-        distanceText.text = "Distance" + distance.ToString("F2") + "m";
+        //distance = playTime * 10;
+
+        //distanceText.text = "Distance" + distance.ToString("F2") + "m";
 
     }
 
