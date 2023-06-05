@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class GameDirector : MonoBehaviour
 {
      GameObject Time;
@@ -21,16 +23,15 @@ public class GameDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.Time.GetComponent<Image>().fillAmount -= 0.001f;
+        this.Time.GetComponent<Image>().fillAmount -= 0.0001f;
         
-        if (Time > 0.0000001f) ;
+       if (this.Time.GetComponent<Image>().fillAmount < 0.0001f)
+        {
+            SceneManager.LoadScene("start scene");
+        }
         
         
-        //playTime += Time.deltaTime;
-
-        //distance = playTime * 10;
-
-        //distanceText.text = "Distance" + distance.ToString("F2") + "m";
+       
 
     }
 

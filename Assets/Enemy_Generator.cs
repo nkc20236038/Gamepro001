@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_Generator : MonoBehaviour
 {
     public GameObject Enemyfab;
-    float span = 1f;
+    float span = 0.3f;
     float delta = 0;
     // Start is called before the first frame update
     void Start()
